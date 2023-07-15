@@ -1,0 +1,195 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "xpp",
+	"patterns": [
+		{
+			"include": "#root"
+		}
+	],
+	"repository": {
+		"root": {
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#operator"
+				},
+				{
+					"include": "#section"
+				},
+				{
+					"include": "#identifier-file"
+				},
+				{
+					"include": "#identifier"
+				},
+				{
+					"include": "#number"
+				},
+				{
+					"include": "#symbol"
+				},
+				{
+					"include": "#parenthesis"
+				},
+				{
+					"include": "#block"
+				},
+				{
+					"include": "#string-double"
+				},
+				{
+					"include": "#string-single"
+				}
+			]
+		},
+		"comment": {
+			"match": "::.*",
+			"name": "comment.line.xpp"
+		},
+		"operator": {
+			"match": "\\b(?:add|chr|cls|dec|div|evl|exit|flt|get|idx|if|imp|inc|int|jmp|len|load|lwr|mul|new|pop|pow|prt|psh|read|rem|rep|ret|rnd|rng|save|str|sub|thrw|try|upr|var|wait|whl)\\b",
+			"name": "keyword.control.operator.xpp"
+		},
+		"section": {
+			"begin": "(?<=:)[a-zA-Z_][a-zA-Z0-9_]*",
+			"beginCaptures": {
+				"0": {
+					"name": "entity.name.section.name.xpp"
+				}
+			},
+			"end": "\r?\n",
+			"name": "section.group.xpp",
+			"patterns": [
+				{
+					"include": "#parameter"
+				},
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"parameter": {
+			"match": "[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "variable.parameter.xpp"
+		},
+		"identifier-file": {
+			"match": "(?<=@)[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "constant.language.identifier.file.xpp"
+		},
+		"identifier": {
+			"match": "[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "variable.name.identifier.xpp"
+		},
+		"number": {
+			"match": "[+-]?(?:\\d+(?:\\.\\d*)?|\\d*\\.\\d+)",
+			"name": "constant.numeric.decimal.xpp"
+		},
+		"symbol": {
+			"match": "<|<=|==|!=|>|>=|\\+|-|\\*|/|\\?|:|;|@|\\\\",
+			"name": "punctuation.symbol.xpp"
+		},
+		"parenthesis": {
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.parenthesis.open.xpp"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.parenthesis.close.xpp"
+				}
+			},
+			"name": "parenthesis.group.xpp",
+			"patterns": [
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"block": {
+			"begin": "{",
+			"end": "}",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.block.open.xpp"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.block.close.xpp"
+				}
+			},
+			"name": "block.group.xpp",
+			"patterns": [
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"interpolation": {
+			"begin": "\\$\\(",
+			"end": "\\)",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.interpolation.open.xpp"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.interpolation.close.xpp"
+				}
+			},
+			"name": "interpolation.group.xpp",
+			"patterns": [
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"string-double": {
+			"begin": "\"",
+			"end": "\"",
+			"beginCaptures": {
+				"0": {
+					"name": "string.quoted.double.xpp"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "string.quoted.double.xpp"
+				}
+			},
+			"name": "string.group.double.xpp",
+			"patterns": [
+				{
+					"include": "#interpolation"
+				}
+			]
+		},
+		"string-single": {
+			"begin": "'",
+			"end": "'",
+			"beginCaptures": {
+				"0": {
+					"name": "string.quoted.single.xpp"
+				}
+			},
+			"endCaptures": {
+				"0": {
+					"name": "string.quoted.single.xpp"
+				}
+			},
+			"name": "string.group.single.xpp",
+			"patterns": [
+				{
+					"include": "#interpolation"
+				}
+			]
+		}
+	},
+	"scopeName": "source.xpp"
+}
