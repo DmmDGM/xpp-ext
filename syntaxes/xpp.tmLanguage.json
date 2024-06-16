@@ -7,6 +7,78 @@
 		}
 	],
 	"repository": {
+		"bracket.curly": {
+			"begin": "{",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.bracket.curly.begin.xpp"
+				}
+			},
+			"end": "}",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.bracket.curly.end.xpp"
+				}
+			},
+			"name": "meta.bracket.curly.xpp",
+			"patterns": [
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"bracket.dollar": {
+			"begin": "\\$\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.bracket.dollar.begin.xpp"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.bracket.dollar.end.xpp"
+				}
+			},
+			"name": "meta.bracket.dollar.xpp",
+			"patterns": [
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"bracket.round": {
+			"begin": "\\(",
+			"beginCaptures": {
+				"0": {
+					"name": "punctuation.bracket.round.begin.xpp"
+				}
+			},
+			"end": "\\)",
+			"endCaptures": {
+				"0": {
+					"name": "punctuation.bracket.round.end.xpp"
+				}
+			},
+			"name": "meta.bracket.round.xpp",
+			"patterns": [
+				{
+					"include": "#root"
+				}
+			]
+		},
+		"comment": {
+			"match": "::.*",
+			"name": "comment.line.xpp"
+		},
+		"number": {
+			"match": "[+-]?(\\d+(_\\d+)*(\\.\\d+(_\\d+)*)?|\\.\\d+(_\\d+)*)(e[+-]?\\d+(_\\d+)*)?",
+			"name": "constant.numeric"
+		},
+		"operator": {
+			"match": "\\b(add|cap|chr|cls|dec|div|ext|flt|func|hlt|idx|if|inc|inp|int|jmp|len|load|lwr|mul|out|pow|prt|rem|rep|ret|rnd|rng|save|set|str|sub|thw|try|upr|whl)\\b",
+			"name": "keyword.operator.xpp"
+		},
 		"root": {
 			"patterns": [
 				{
@@ -16,13 +88,13 @@
 					"include": "#operator"
 				},
 				{
-					"include": "#section"
+					"include": "#variable.function"
 				},
 				{
-					"include": "#identifier-file"
+					"include": "#variable.file"
 				},
 				{
-					"include": "#identifier"
+					"include": "#variable.local"
 				},
 				{
 					"include": "#number"
@@ -31,133 +103,27 @@
 					"include": "#symbol"
 				},
 				{
-					"include": "#parenthesis"
+					"include": "#bracket.round"
 				},
 				{
-					"include": "#block"
+					"include": "#bracket.curly"
 				},
 				{
-					"include": "#string-double"
+					"include": "#string.double"
 				},
 				{
-					"include": "#string-single"
+					"include": "#string.single"
 				}
 			]
 		},
-		"comment": {
-			"match": "::.*",
-			"name": "comment.line.xpp"
-		},
-		"operator": {
-			"match": "\\b(?:add|chr|cls|dec|div|evl|exit|flt|get|idx|if|imp|inc|int|jmp|len|load|lwr|mul|new|pop|pow|prt|psh|read|rem|rep|ret|rnd|rng|save|str|sub|thrw|try|upr|var|wait|whl)\\b",
-			"name": "keyword.control.operator.xpp"
-		},
-		"section": {
-			"begin": "(?<=:)[a-zA-Z_][a-zA-Z0-9_]*",
-			"beginCaptures": {
-				"0": {
-					"name": "entity.name.section.name.xpp"
-				}
-			},
-			"end": "\r?\n",
-			"name": "section.group.xpp",
-			"patterns": [
-				{
-					"include": "#parameter"
-				},
-				{
-					"include": "#root"
-				}
-			]
-		},
-		"parameter": {
-			"match": "[a-zA-Z_][a-zA-Z0-9_]*",
-			"name": "variable.parameter.xpp"
-		},
-		"identifier-file": {
-			"match": "(?<=@)[a-zA-Z_][a-zA-Z0-9_]*",
-			"name": "constant.language.identifier.file.xpp"
-		},
-		"identifier": {
-			"match": "[a-zA-Z_][a-zA-Z0-9_]*",
-			"name": "variable.name.identifier.xpp"
-		},
-		"number": {
-			"match": "[+-]?(?:\\d+(?:\\.\\d*)?|\\d*\\.\\d+)",
-			"name": "constant.numeric.decimal.xpp"
-		},
-		"symbol": {
-			"match": "<|<=|==|!=|>|>=|\\+|-|\\*|/|\\?|:|;|@|\\\\",
-			"name": "punctuation.symbol.xpp"
-		},
-		"parenthesis": {
-			"begin": "\\(",
-			"end": "\\)",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.parenthesis.open.xpp"
-				}
-			},
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.parenthesis.close.xpp"
-				}
-			},
-			"name": "parenthesis.group.xpp",
-			"patterns": [
-				{
-					"include": "#root"
-				}
-			]
-		},
-		"block": {
-			"begin": "{",
-			"end": "}",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.block.open.xpp"
-				}
-			},
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.block.close.xpp"
-				}
-			},
-			"name": "block.group.xpp",
-			"patterns": [
-				{
-					"include": "#root"
-				}
-			]
-		},
-		"interpolation": {
-			"begin": "\\$\\(",
-			"end": "\\)",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.interpolation.open.xpp"
-				}
-			},
-			"endCaptures": {
-				"0": {
-					"name": "punctuation.interpolation.close.xpp"
-				}
-			},
-			"name": "interpolation.group.xpp",
-			"patterns": [
-				{
-					"include": "#root"
-				}
-			]
-		},
-		"string-double": {
+		"string.double": {
 			"begin": "\"",
-			"end": "\"",
 			"beginCaptures": {
 				"0": {
 					"name": "string.quoted.double.xpp"
 				}
 			},
+			"end": "\"",
 			"endCaptures": {
 				"0": {
 					"name": "string.quoted.double.xpp"
@@ -166,18 +132,18 @@
 			"name": "string.group.double.xpp",
 			"patterns": [
 				{
-					"include": "#interpolation"
+					"include": "#bracket.dollar"
 				}
 			]
 		},
-		"string-single": {
+		"string.single": {
 			"begin": "'",
-			"end": "'",
 			"beginCaptures": {
 				"0": {
 					"name": "string.quoted.single.xpp"
 				}
 			},
+			"end": "'",
 			"endCaptures": {
 				"0": {
 					"name": "string.quoted.single.xpp"
@@ -186,9 +152,25 @@
 			"name": "string.group.single.xpp",
 			"patterns": [
 				{
-					"include": "#interpolation"
+					"include": "#bracket.dollar"
 				}
 			]
+		},
+		"symbol": {
+			"match": "<|<=|==|!=|>|>=|&&|\\|\\||:|\\\\",
+			"name": "punctuation.symbol.xpp"
+		},
+		"variable.file": {
+			"match": "@[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "constant.character.file.xpp"
+		},
+		"variable.function": {
+			"match": "(?<=func\\s+)[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "variable.parameter.function.xpp"
+		},
+		"variable.local": {
+			"match": "[a-zA-Z_][a-zA-Z0-9_]*",
+			"name": "variable.other.local.xpp"
 		}
 	},
 	"scopeName": "source.xpp"

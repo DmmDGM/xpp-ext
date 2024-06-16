@@ -1,0 +1,271 @@
+{
+    "Add": {
+        "body": [
+            "add $1"
+        ],
+        "description": "Adds two numbers",
+        "prefix": "add"
+    },
+    "Capitalize": {
+        "body": [
+            "cap"
+        ],
+        "description": "Capitalizes the first letter of a string",
+        "prefix": "cap"
+    },
+    "Character": {
+        "body": [
+            "chr $1"
+        ],
+        "description": "Selects a character from a string",
+        "prefix": "chr"
+    },
+    "Clear screen": {
+        "body": [
+            "cls"
+        ],
+        "description": "Clears screen",
+        "prefix": "cls"
+    },
+    "Decrement": {
+        "body": [
+            "dec"
+        ],
+        "description": "Decrements a value",
+        "prefix": "dec"
+    },
+    "Divide": {
+        "body": [
+            "div $1"
+        ],
+        "description": "Divides two numbers",
+        "prefix": "div"
+    },
+    "Exit": {
+        "body": [
+            "ext"
+        ],
+        "description": "Exits program",
+        "prefix": "ext"
+    },
+    "Float": {
+        "body": [
+            "flt"
+        ],
+        "description": "Converts a value into a float",
+        "prefix": "flt"
+    },
+    "Function": {
+        "body": [
+            ":func $1 ($2)"
+        ],
+        "description": "Declares a function",
+        "prefix": ":func"
+    },
+    "Halt": {
+        "body": [
+            "hlt"
+        ],
+        "description": "Halts the program for a specified amount of time",
+        "prefix": "hlt"
+    },
+    "Index": {
+        "body": [
+            "idx $1"
+        ],
+        "description": "Selects a value from a list",
+        "prefix": "idx"
+    },
+    "If": {
+        "body": [
+            "if ($1) { $2 }"
+        ],
+        "description": "Creates a single-branch if statement in the program",
+        "prefix": "if"
+    },
+    "If-Else": {
+        "body": [
+            "if ($1) { $2 } \\",
+			"\t{ $3 }"
+        ],
+        "description": "Creates a multi-branch if statement in the program",
+        "prefix": "if-else"
+    },
+    "Increment": {
+        "body": [
+            "inc"
+        ],
+        "description": "Increments a value",
+        "prefix": "inc"
+    },
+    "Input": {
+        "body": [
+            "inp"
+        ],
+        "description": "Fetches input from user",
+        "prefix": "inp"
+    },
+    "Integer": {
+        "body": [
+            "int"
+        ],
+        "description": "Converts a value into an integer",
+        "prefix": "int"
+    },
+    "Jump": {
+        "body": [
+            "jmp"
+        ],
+        "description": "Calls a function",
+        "prefix": "jmp"
+    },
+    "Length": {
+        "body": [
+            "len"
+        ],
+        "description": "Fetches the length of a list or a string",
+        "prefix": "len"
+    },
+    "Load": {
+        "body": [
+            "load"
+        ],
+        "description": "Loads file",
+        "prefix": "load"
+    },
+    "Lowercase": {
+        "body": [
+            "lwr"
+        ],
+        "description": "Converts a string into all lowercase",
+        "prefix": "lwr"
+    },
+    "Multiply": {
+        "body": [
+            "mul $1"
+        ],
+        "description": "Multiplies two numbers",
+        "prefix": "mul"
+    },
+    "Output": {
+        "body": [
+            "out $1"
+        ],
+        "description": "Outputs values joined by spaces into the terminal",
+        "prefix": "out"
+    },
+    "Power": {
+        "body": [
+            "pow $1"
+        ],
+        "description": "Raises a number to an exponent",
+        "prefix": "pow"
+    },
+    "Print": {
+        "body": [
+            "prt"
+        ],
+        "description": "Prints a value into the terminal",
+        "prefix": "prt"
+    },
+    "Remove": {
+        "body": [
+            "rem"
+        ],
+        "description": "Removes a variable from memory",
+        "prefix": "rem"
+    },
+    "Repeat": {
+        "body": [
+            "rep $1 { $2 }"
+        ],
+        "description": "Repeats a specified code for a specified amount of times",
+        "prefix": "rep"
+    },
+    "Return": {
+        "body": [
+            "ret"
+        ],
+        "description": "Returns a value from a function",
+        "prefix": "ret"
+    },
+    "Round": {
+        "body": [
+            "rnd"
+        ],
+        "description": "Rounds a value to the nearest integer",
+        "prefix": "rnd"
+    },
+    "Random": {
+        "body": [
+            "rng $1"
+        ],
+        "description": "Chooses a random integer from a specified range",
+        "prefix": "rng"
+    },
+    "Save": {
+        "body": [
+            "save $1"
+        ],
+        "description": "Saves file",
+        "prefix": "save"
+    },
+    "Set": {
+        "body": [
+            "set $1"
+        ],
+        "description": "Defines a variable into memory",
+        "prefix": "set"
+    },
+    "String": {
+        "body": [
+            "str"
+        ],
+        "description": "Converts a value into a string",
+        "prefix": "str"
+    },
+    "Subtract": {
+        "body": [
+            "sub $1"
+        ],
+        "description": "Subtracts two numbers",
+        "prefix": "sub"
+    },
+    "Throw": {
+        "body": [
+            "thw"
+        ],
+        "description": "Throws an error message",
+        "prefix": "thw"
+    },
+    "Try": {
+        "body": [
+            "try { $1 }"
+        ],
+        "description": "Attempts to run a specified code",
+        "prefix": "try"
+    },
+    "Try-Resolve": {
+        "body": [
+            "try { $1 } \\",
+			"\t{ $2 } \\",
+			"\t{ $3 }"
+        ],
+        "description": "Attempts to run a specified code, then resolves according to its success status",
+        "prefix": "try-resolve"
+    },
+    "Uppercase": {
+        "body": [
+            "upr"
+        ],
+        "description": "Converts a string into all uppercase",
+        "prefix": "upr"
+    },
+    "While": {
+        "body": [
+            "whl ($1) { $2 }"
+        ],
+        "description": "Loops a specified code until the condition is no longer met",
+        "prefix": "whl"
+    }
+}

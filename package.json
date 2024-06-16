@@ -1,48 +1,50 @@
 {
-  "name": "xpp-ext",
-  "displayName": "xpp-ext",
-  "description": "Syntax highlighting for xpp",
-  "version": "1.0.0",
-  "engines": {
-    "vscode": "^1.80.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [
-      {
-        "id": "xpp",
-        "aliases": [
-          "xpp",
-          "xpp"
-        ],
-        "extensions": [
-          ".xpp"
-        ],
-        "configuration": "./language-configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "xpp",
-        "scopeName": "source.xpp",
-        "path": "./syntaxes/xpp.tmLanguage.json"
-      }
-    ]
-  },
-  "icon": "xpp.png",
-  "scripts": {
-    "test": "echo \"Hello world!\" && exit 10"
-  },
-  "keywords": [
-    "xpp"
-  ],
-  "author": "DmmD GM",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DmmDGM/xpp-ext"
-  },
-  "publisher": "DmmDGM"
+	"author": "DmmD GM",
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"grammars": [
+			{
+				"language": "xpp",
+				"path": "./syntaxes/xpp.tmLanguage.json",
+				"scopeName": "source.xpp"
+			}
+		],
+		"languages": [
+			{
+				"configuration": "./language-configuration.json",
+				"extensions": [
+					".xpp"
+				],
+				"id": "xpp"
+			}
+		],
+		"snippets": [
+			{
+				"language": "xpp",
+				"path": "./snippets.json"
+			}
+		]
+	},
+	"description": "Syntax highlighting for xpp",
+	"displayName": "xpp-ext",
+	"engines": {
+		"vscode": "^1.80.0"
+	},
+	"icon": "./images/xpp.png",
+	"keywords": [
+		"xpp"
+	],
+	"license": "MIT",
+	"name": "xpp-ext",
+	"publisher": "DmmDGM",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/DmmDGM/xpp-ext"
+	},
+	"scripts": {
+		"test": "echo \"Hello world!\" && exit 0"
+	},
+	"version": "1.1.0"
 }
